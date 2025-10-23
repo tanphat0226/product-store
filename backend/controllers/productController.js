@@ -85,6 +85,7 @@ export const updateProduct = async (req, res) => {
 export const deleteProduct = async (req, res) => {
 	const { id } = req.params
 
+<<<<<<< HEAD
 	if (mongoose.Types.ObjectId.isValid(id) === false) {
 		return res.status(400).json({
 			success: false,
@@ -92,6 +93,8 @@ export const deleteProduct = async (req, res) => {
 		})
 	}
 
+=======
+>>>>>>> 6e08bdbb6a4279d867ba9054a880f0e46f410d15
 	try {
 		await Product.findByIdAndDelete(id)
 
