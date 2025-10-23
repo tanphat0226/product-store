@@ -12,9 +12,6 @@ app.use(express.json())
 // Mount product routes
 app.use('/api/products', productRoutes)
 
-// Mount product routes
-app.use('/api/products', productRoutes)
-
 app.listen(env.PORT, () => {
 	connectDB()
 	console.log(`Server started at http://localhost:${env.PORT}`)
