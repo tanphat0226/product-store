@@ -1,13 +1,17 @@
 import express from 'express'
-import { connectDB } from './config/db.js'
+import { connectDB } from './configs/db.js'
+import productRoutes from './routes/productRoute.js'
+import { env } from './configs/env.js'
 
 const app = express()
 
-app.get('/', (req, res) => {
-	res.send('🟢 Server is running')
-})
+// Middleware to parse JSON request bodies
+app.use(express.json())
 
-app.listen(5000, () => {
+// Mount product routes
+app.use('/api/products', productRoutes)
+
+app.listen(env.PORT, () => {
 	connectDB()
-	console.log('Server started at http://localhost:5000')
+	console.log(`Server started at http://localhost:${env.PORT}`)
 })
