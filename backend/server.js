@@ -1,11 +1,14 @@
 import express from 'express'
-import { connectDB } from './config/db.js'
+import { connectDB } from './configs/db.js'
+import productRoutes from './routes/productRoute.js'
 
 const app = express()
 
-app.get('/', (req, res) => {
-	res.send('🟢 Server is running')
-})
+// Middleware to parse JSON request bodies
+app.use(express.json())
+
+// Mount product routes
+app.use('/api/products', productRoutes)
 
 app.listen(5000, () => {
 	connectDB()
