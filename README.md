@@ -1,4 +1,6 @@
   <h1 align="center">Product Strore 🚀</h1>
+  
+![Demo](frontend/src/images/demo-image.png)
 
 About This Course:
 
